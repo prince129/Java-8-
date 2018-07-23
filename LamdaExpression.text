@@ -1,0 +1,16 @@
+# Java-8-
+Characteristics if java 8
+class GFG {
+    
+    // Instance of Anonymous class
+    // FileFilter fileFilter = new FileFilter(){
+        
+    //    @Override
+    //    public boolean accept(File file){
+    //        return file.getName().endsWith(".java");
+    //  }
+    //};
+    
+    // Java 8 Lamda Expression
+    FileFilter fileFilter = (File file) -> file.getName().endsWith(".java");
+}
