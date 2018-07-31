@@ -1,0 +1,58 @@
+Functional Interfaces Toolbox
+
+java.util.function
+1. Supplier
+  @FunctionalInterface
+  public interface Suupplier<T>{
+	  T get();
+	}
+2. Consumer
+	@FunctionalInterface
+	 public interface Consumer<T>{
+	  void acceopt(T t);
+	}
+
+3.  BiConsumer
+	  @FunctionalInterface
+	public interface BiConsumer<T, U>{
+	void accept(T t, U u);
+	}
+4. Predicate
+	 @FunctionalInterface
+	public interface Predicate<T>{
+	boolean test(T t);
+	}
+5. BiPredicate
+	 @FunctionalInterface
+	public interface BiPredicate<T, U>{
+	boolean test(T t, U u);
+	}
+6. Function
+	@FunctionalInterface
+	public interface Function<T, R>{
+	R apply(T t);
+	}
+7. BiFunction
+	@FunctionalInterface
+	public interface BiFunction<T, U, R>{
+	R apply(T t, U u);
+	}
+8. UnaryOperator
+	@FunctionalInterface
+	public interface UnaryOperator<T> extends Function<T, T>{
+}
+9. BinaryOperator
+	@FunctionalInterface
+	public interface BinaryOperator<T> extends Function<T, T,T>{
+}
+
+
+Method Refrence
+
+This Lambda expression: 
+	consumerm<String> c = s-> Syatem.out.println(s);
+Can be written as :
+	consumer<String> c = System.out::println;
+
+Comparator<Integer> c = (i1, i2)-> Integer.compare(i1, i2);
+Comparator<Integer> c = Integer::compare;
