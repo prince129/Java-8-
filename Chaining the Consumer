@@ -1,0 +1,12 @@
+# Java-8-
+Characteristics if java 8
+Chaining the Consumer
+
+List<String> strings = Arrays.asList("one", "two", "three", "four", "five");
+
+List<String> results = new ArrayList<>();
+
+Consumer<String> c1 = System.out::println;
+Consumer<String> c2 = result::add;
+
+stringd.forEach(c1.andThen(c2));
