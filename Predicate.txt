@@ -1,0 +1,39 @@
+# Java-8-
+Characteristics if java 8
+Where are our objects?
+Most of the time: in a Collection(or maybe a List)
+Lambda Syntax:
+
+List<Customer> list = ...;
+list.forEach(customer -> System.out.println(customer));
+
+
+Method Refrence:
+
+List<Customer> list = ...;
+list.forEach(System.out::println);
+
+This implemention is for ForEach.
+How to add Methods to iterable??
+pulic interface Iterable<E>{
+	
+	// the usual methods
+
+	default void forEach(Consumer<E> consumer){
+	for(E e : this){
+		consumer.accept(e)
+		}
+     	}
+}
+
+It allows to change the old interfaces without breaking the existing implementation.
+
+Static methods are also allowed in java 8 interfaces.
+
+Predicates.
+
+Predicate<String> p1 = s -> s.length()<20;
+Predicate<String> p2 = s -> s.length()>10;
+
+Predicate<String> p3 = p1.and(p2);
+Predicate<String> id = Predicate.isEqual(target);
