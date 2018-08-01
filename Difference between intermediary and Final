@@ -1,0 +1,8 @@
+The call to the filter method is lazy.
+When we invoke the method its just the declartion of the statement.
+An operation on a stream that returns a Stream is called an intermediary operation.
+
+peek() --> returns the stream.(Intermediary Operation)
+forEach() --> doesnot return anything.(Final Operation)
+
+Only the final operation will trigger the processing of the data in Stream.
