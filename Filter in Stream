@@ -1,0 +1,29 @@
+Filter on Stream
+	
+	List<Person> list = ...;
+	
+	Stream<Person> stream = list.stream();
+	Stream<Person> filtered = stream.filter(person -> 	person.getAge() > 20);
+	
+	Filter Element takes a predicate.
+	default--	and, or and negate
+	
+	Static method -- Predicate.isEqual("");
+	
+	Stream Static method -- Stream.of(elements);
+	
+	Stream on filter returns new instance of the Stream.
+
+	Predicate<Person> p = person -> person.getAge() > 20;
+
+	
+	Another Example
+
+	Stream<String> stream = Stream.of("one", "two", "three", "four", "five");
+
+	Predicate<String> p1 = a -> a.length()>3;
+	Predicate<String> p2 = Predicate.isEqual("two");
+	Predicate<String> p3 = Predicate.isEqual("three");
+
+	stream.filter(p2.or(p3))
+	.forEach(a -> System.out.println(a));
