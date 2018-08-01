@@ -1,0 +1,28 @@
+Mapping Operation
+
+map() -- returns a Stream therefore intermediary operation.
+
+one abstract method in interface Function
+
+--> R apply(T t);
+default 
+
+--> compose
+--> andThen
+
+Static 
+
+--> identity
+
+Another Method
+	flatMap();
+
+Signature: 
+	
+	<R> Stream<R> flatmap(Function<T, Stream<R>> flatMapper);
+
+	<R> Stream<R> map(Function<T, R> mapper);
+
+	If the flatMap was a regular map, it would return a 	Stream<Stream<R>>
+	But it is a flatMap
+	Thus the Stream of Stream is flattened to become a Stream.
