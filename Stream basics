@@ -1,0 +1,50 @@
+Stream API.
+
+Map/ Filter/ Reudce
+
+1.Map
+2. Filter
+3. Reduce
+ What is stream?
+
+	Stream is a Java typed interface.
+	It gives ways to efficiently process large amounts of data 	and smaller ones too.
+
+	It can process data in parallel.
+
+	An object on which one can define operations.
+
+	An object that does not hold any data.
+
+	An object that should not change the data it processes.
+
+	An object able to process data in <<one pass>>
+
+	All the processing of data is done in the pipeline.
+
+	
+Why can't a collection be a stream?
+
+Because Stream is a new concept, and we dont want to change the Collection API works.
+
+How to Build Stream.
+
+List<Person> person = ...;
+
+Stream<Person> stream = person.stream();
+
+stream.forEach(p -> System.out.println(p));
+
+
+Chain Consumers
+	
+	List<String> list = new ArrayList<>();
+	
+	Consumer<String> c1 = s -> list.add(s);
+	Consumer<String> c2 = s -> System.out.println(s);
+
+	Consumer<String> c3 = c1.andThen(c2);
+
+	person.stream().forEach(c1.andThen(c2));
+
+
