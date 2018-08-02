@@ -1,0 +1,16 @@
+String Join
+	
+	Concating the String
+	String Buffer -- Synchorinzed
+	String Builder -- unsynchorinzed
+	StringJoiner -- 
+	
+	StringJoiner sj = new StringJoiner(", ");
+	sj.add("one").add("two").add("three");
+	String s = sj.toString();
+	System.out.println(s);
+	
+	
+	The StringJoiner can be used from the String class
+	
+	String.join(", ", "one", "two");
