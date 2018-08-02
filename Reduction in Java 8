@@ -1,0 +1,35 @@
+Reduction
+
+Reduction are terminal operations.
+
+Two kind of reduction in Stream API
+	1. Min, Max, Sum, count, allMatch(), noneMatch() etc...
+		
+		bifunction takes two argument.
+	
+		1. Stream is empty -- identity element is taken.
+		2. Stream has one element -- resuction is that 		   element and identity element.
+
+		Stream<Integer> stream = ...;
+		BinaryOperation<Integer> sum = (i1, i2) -> i1+i2;
+		Integer id = 0; // identity element for the sum.
+
+		int red = Stream.reduce(id, sum);
+
+		Stream<Integer> stream = Stream.empty();
+		int red = stream.reduve(id, sum);
+		System.out.println(red);
+		prints > 0
+	
+	**Optinal return type is a wrapper type we may have no value.
+	Optinal<String> opt = ... ;
+	if(opt.isPresent()){
+		String s = opt.get();
+		} else{
+			
+			}
+	**The Method orElse() encapsulates both calls.-- if present it will get the element.
+	** The method orElseThrow(Exception). -- if present will return the element and if not present it will throw the exception.
+
+
+	
