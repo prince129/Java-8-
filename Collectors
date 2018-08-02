@@ -1,0 +1,24 @@
+Collectors
+	mutable reduction.
+	Instead of aggregating elements, this reduction put them in 	a << container >>
+
+	String  == Collectors.joining(", ")
+	List == Collectors.tiList()
+	Map == Collectors.groupingBy(Person::getAge)
+	
+		keys of this map will we age of peron and values 		will be the person object itself.
+
+DownStream Collectors
+	
+	Collectors.counting() just counts the number of people of 	each age.
+	
+	** We cant perform two final operation on single Stream.
+	
+	Map<Integer, Long> map = 
+	persons.stream()
+		.collect(
+			Collectors.groupingBy(
+				person::getAge,
+				Collectors.counting() // downstream counting if not define the value of the map will be the Person object with key as integer of age
+				)		
+		);
