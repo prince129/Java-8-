@@ -1,0 +1,49 @@
+Modular JDK
+	
+	language
+	Compiler
+	Virtual Machine
+	Tooling 
+
+
+Module Descriptor
+
+Example: 
+
+		modeule java.sql {
+			
+			exports java.sql; 
+			exports javax.sql;
+	
+			requires java.logging;
+			requires java.xml;	
+
+
+			}
+
+Export takes the packages name.
+requires takes the modules name as there dependency.
+
+JShell
+R
+E
+P
+L
+
+JShell in cmd
+Ctrl+d to Stop
+Ctrl+l to clear
+Tab for completion
+Incremental Devlopment of Code
+/save filename.jsh  --> in JShell is used to save the JShell to save in the file.
+
+/open filename.jsh ---> will be restored.
+/types
+
+We can open plain java file as well.
+We can open a class of JDK
+jshell --class-path ....
+
+JShell API
+
+
